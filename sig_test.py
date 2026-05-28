@@ -200,8 +200,8 @@ def test_genes(burden, nvar, y, covars, names, trait_type, min_variants):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--vcf", help="bgzipped + tabix-indexed VCF (one chromosome)", default='/Users/buzgalbraith/workspace/bdc_exploration/Downloads/GWAS_1kg-genotypes_vcf_ALL.chr17.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.bgz')
-    ap.add_argument("--pheno",  help="CSV/TSV of phenotype + covariates", default='/Users/buzgalbraith/workspace/bdc_exploration/pheno_chr17.csv')
+    ap.add_argument("--vcf", help="bgzipped + tabix-indexed VCF (one chromosome)", default='data/GWAS_1kg-genotypes_vcf_ALL.chr17.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.bgz')
+    ap.add_argument("--pheno",  help="CSV/TSV of phenotype + covariates", default='data/phenotypes.csv')
     ap.add_argument("--contig", default="17", help="contig name as it appears in the VCF (e.g. '17')")
     ap.add_argument("--region", default=None, help="optional region for cyvcf2, e.g. '17' or '17:1-83000000'")
     ap.add_argument("--release", type=int, default=75, help="Ensembl release (75 = GRCh37)")
@@ -212,7 +212,7 @@ def main():
     ap.add_argument("--maf", type=float, default=0.01, help="max alt allele frequency to include")
     ap.add_argument("--weights", choices=["count", "beta"], default="count")
     ap.add_argument("--min-variants", type=int, default=2, help="min rare variants for a gene to be tested")
-    ap.add_argument("--out", default="gene_burden_results.tsv")
+    ap.add_argument("--out", default="data/gene_burden_results.tsv")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
