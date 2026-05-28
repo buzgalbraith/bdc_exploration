@@ -1,0 +1,6 @@
+- there is a syntehtic dataset that is a GWAS study associated with top med pehotypes. Can read more about that [here](https://bdcatalyst.gitbook.io/biodata-catalyst-documentation/tutorials-videos-and-modules/terra-tutorials/genome-wide-association-study-tutorial#about-the-data)
+- from that study we got all varients on chromsome 17 with no filtering [here](https://console.cloud.google.com/storage/browser/_details/terra-featured-workspaces/GWAS/1kg-genotypes/vcf/ALL.chr17.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.bgz;tab=live_object?pageState=(%22StorageObjectListTable%22%3A(%22f%22%3A%22%255B%255D%22)))
+    - note that the above file is unfiltered, they only have the filtered one accessible via the downloaded client for some reason
+- I also download meta information from object id `dg.4503/1e4d2737-5878-4f5a-bc1c-1ed4dd4839cc` using `download_references.py`
+- that meta information was then combines with `format_phenotpye_file.py`
+- I then used `sig_test.py` which is a vibe coded script to test for phenotypes
