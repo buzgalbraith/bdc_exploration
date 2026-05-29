@@ -207,7 +207,7 @@ def main():
     ap.add_argument("--release", type=int, default=75, help="Ensembl release (75 = GRCh37)")
     ap.add_argument("--sample-col", default="sample_id")
     ap.add_argument("--pheno-col", default="ldl")
-    ap.add_argument("--covars", default='annotated_sex', help="comma-separated covariate column names (e.g. PC1,PC2,PC3,sex)")
+    ap.add_argument("--covars", default='annotated_sex,age_at_index,population_ASW,population_BEB,population_CDX,population_CEU,population_CHB,population_CHS,population_CLM,population_ESN,population_FIN,population_GBR,population_GIH,population_GWD,population_IBS,population_ITU,population_JPT,population_KHV,population_LWK,population_MSL,population_MXL,population_PEL,population_PJL,population_PUR,population_STU,population_TSI,population_YRI', help="comma-separated covariate column names (e.g. PC1,PC2,PC3,sex)")
     ap.add_argument("--trait-type", choices=["auto", "quantitative", "binary"], default="auto")
     ap.add_argument("--maf", type=float, default=0.01, help="max alt allele frequency to include")
     ap.add_argument("--weights", choices=["count", "beta"], default="count")
